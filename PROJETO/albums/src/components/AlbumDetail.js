@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native'
 
+import Card from './Card';
+import CardItem from './CartItem';
+
+
 class AlbumDetail extends Component {
 
     constructor(props) {
@@ -9,9 +13,11 @@ class AlbumDetail extends Component {
 
     render() {
         return (
-            <View>
-                <Text>{this.props.album.title}</Text>
-            </View>
+            <Card>
+                <CardItem>
+                    <Text>{this.props.album.title}</Text>
+                </CardItem>
+            </Card>
         );
     }
 }
