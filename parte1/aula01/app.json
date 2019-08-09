@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "Projeto Inicial RN do Jefferson",
-    "slug": "ProjetoInicial",
+    "name": "Aula 01",
+    "slug": "aula01",
     "privacy": "public",
-    "sdkVersion": "33.0.0",
+    "sdkVersion": "34.0.0",
     "platforms": [
       "ios",
       "android",

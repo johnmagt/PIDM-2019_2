@@ -9,14 +9,14 @@ class CardItem extends Component{
 
     render(){
         return (
-            <View style={style.containerStyle}>
+            <View style={styles.containerStyle}>
                 {this.props.children}
             </View>
         );
     }
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     containerStyle: {
         borderBottomWidth: 1,
         padding: 5,
