@@ -1,2 +1,14 @@
+
+
+
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+
+import CalculadoraApp from './components/imc/CalculadoraApp';
+
+export default class App extends Component{
+    render(){
+        return (
+            <CalculadoraApp />
+        )
+    }
+}
