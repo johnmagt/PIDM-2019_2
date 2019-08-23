@@ -22,7 +22,7 @@ export default class CalculadoraApp extends Component{
                     onChangeText = {
                         (p)=>{
                             this.setState(
-                                ()=>{return {peso:p}}
+                                {peso:p}
                             )
                         }
                     } 
