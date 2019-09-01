@@ -5,7 +5,9 @@ import IMCMsg from './IMCMsg';
 
 export default class IMCCalc extends Component{
     render(){
-        if(this.props.altura==null || this.props.peso==null) return null;
+        if(this.props.altura==null || 
+           this.props.peso==null ||
+           !this.props.calcular) return null;
         let imc = this.props.peso/(this.props.altura*this.props.altura);
         return (
             <View>

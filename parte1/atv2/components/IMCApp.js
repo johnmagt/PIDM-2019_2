@@ -7,8 +7,15 @@ export default class IMCApp extends Component{
 
     constructor(props){
         super(props);
-        this.state = {peso: null, altura: null}
+        this.state = {peso: null, altura: null, calcular:false}
         
+        //this.acaoBotao = this.acaoBotao.bind(this);
+    }
+
+    acaoBotao(){
+        this.setState(()=>{
+            return {calcular:true};
+        });
     }
 
     render(){
@@ -19,21 +26,29 @@ export default class IMCApp extends Component{
                     <Text>Peso(kg): </Text>
                     <TextInput 
                         style={estilos.input}
-                        placeholder="Digite seu peso."/>
+                        placeholder="Digite seu peso."
+                        onChangeText={(peso)=>this.setState({peso, calcular:false})}/>
                 </View>
                 <View style={estilos.view_input}>
                     <Text>Altura(m): </Text>
                     <TextInput 
                         style={estilos.input}
-                        placeholder="Digite sua altura."/>
+                        placeholder="Digite sua altura."
+                        onChangeText={(altura)=>{
+                                                    this.setState({altura,calcular:false});
+                                                }
+                        }
+                        />
                         
                 </View>
                 <View style={estilos.view_botao}>
                     <Button title = "CALCULAR"
+                            onPress = {()=>this.acaoBotao()}
                     />
                 </View>
                 <IMCCalc peso={this.state.peso} 
-                         altura={this.state.altura}/>
+                         altura={this.state.altura}
+                         calcular={this.state.calcular}/>
             </View>
         )
     }        
