@@ -16,6 +16,8 @@ export default class NetworkingApp extends Component {
                 this.setState({
                     isLoading: false,
                     dataSource: responseJson.movies,
+                    title: responseJson.title,
+                    description: responseJson.description
                 });
 
             })
@@ -36,6 +38,10 @@ export default class NetworkingApp extends Component {
 
         return (
             <View style={{ flex: 1, paddingTop: 20 }}>
+                <View style={{padding:20}}>
+                    <Text>{this.state.title}</Text>
+                    <Text>{this.state.description}</Text>
+                </View>
                 <FlatList
                     data={this.state.dataSource}
                     renderItem={({ item }) => <Text>{item.title}, {item.releaseYear}</Text>}
