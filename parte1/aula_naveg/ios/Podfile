@@ -29,6 +29,8 @@ target 'aula_naveg' do
 
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
+  pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
+
   target 'aula_navegTests' do
     inherit! :search_paths
     # Pods for testing
