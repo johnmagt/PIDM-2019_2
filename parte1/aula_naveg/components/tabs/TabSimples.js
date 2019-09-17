@@ -7,7 +7,7 @@ class HomeScreen extends React.Component {
     render() {
         return (
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Text>Home!</Text>
+                <Text style={{fontSize:20, fontWeight:"bold"}}>Home!</Text>
             </View>
         );
     }
@@ -16,13 +16,27 @@ class SettingsScreen extends React.Component {
     render() {
         return (
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Text>Settings!</Text>
+                <Text style={{fontSize:20, fontWeight:"bold"}}>Settings!</Text>
             </View>
         );
     }
 }
-const TabNavigator = createBottomTabNavigator({
-    Home: HomeScreen,
-    Settings: SettingsScreen,
-});
+const TabNavigator = createBottomTabNavigator(
+    {
+        Home: HomeScreen,
+        Settings: SettingsScreen,
+    },
+    {
+        tabBarOptions: {
+            activeTintColor: 'tomato',
+            inactiveTintColor: 'gray',
+            activeBackgroundColor: 'yellow',
+            labelStyle: {
+                fontSize: 20,
+                paddingBottom: 10,
+                fontWeight: "bold"
+            },
+        },
+    }
+);
 export default createAppContainer(TabNavigator);
