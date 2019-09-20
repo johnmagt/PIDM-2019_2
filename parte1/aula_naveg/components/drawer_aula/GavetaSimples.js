@@ -1,13 +1,12 @@
-import React from 'react';
-import { View, Text, Image } from 'react-native';
+import React, { Component } from 'react';
+import { Text, View, Image } from 'react-native';
 
 import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 
-import styles from './Estilos'
+import styles from './Estilos';
 
-class MyHomeScreen extends React.Component {
-    
+class Home extends Component {
     static navigationOptions = {
         drawerLabel: 'Home',
         drawerIcon: ({ tintColor }) => (
@@ -21,17 +20,7 @@ class MyHomeScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-
-                <Text style={styles.title}> HOME SCREEN </Text>
-
-                <Text
-                    style={styles.paragraph}
-                    onPress={() => {
-                        this.props.navigation.navigate('Notifications');
-                    }}>
-                    Go to Notifications
-                </Text>
-
+                <Text style={styles.title}>HOME SCREEN</Text>
                 <Text
                     style={styles.paragraph}
                     onPress={() => {
@@ -40,13 +29,13 @@ class MyHomeScreen extends React.Component {
                     Toggle Drawer
                 </Text>
             </View>
-        );
+        )
     }
 }
 
-class MyNotificationsScreen extends React.Component {
+class Notification extends Component {
     static navigationOptions = {
-        drawerLabel: 'Notifications',
+        drawerLabel: 'Notification',
         drawerIcon: ({ tintColor }) => (
             <Image
                 source={require('./icon-notify.png')}
@@ -58,22 +47,14 @@ class MyNotificationsScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.title}> NOTIFICATIONS SCREEN </Text>
-                <Text
-                    style={styles.paragraph}
-                    onPress={() => {
-                        this.props.navigation.navigate('Home');
-                    }}>
-                    Go back home
-                </Text>
+                <Text style={styles.title}>NOTIFICATION SCREEN</Text>
             </View>
-        );
+        )
     }
 }
 
-const MyDrawerNavigator = createDrawerNavigator({
-    Home:MyHomeScreen,
-    Notifications: MyNotificationsScreen
-});
+const GavetaNavigator = createDrawerNavigator({
+    Home, Notification
+})
 
-export default createAppContainer(MyDrawerNavigator);
+export default createAppContainer(GavetaNavigator);
